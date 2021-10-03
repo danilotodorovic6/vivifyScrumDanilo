@@ -1,0 +1,20 @@
+{
+    "organizationNavigation": {
+        "siteLogo": ".vs-c-site-logo",
+        "searchButton": ".vs-c-project-search",
+        "notificationButton": ".vs-c-notification",
+        "howItWorksButton": ".vs-l-project__options > .vs-c-btn"
+    },
+    "boardNavigation": {
+        "siteLogo": ".vs-c-site-logo",
+        "organizationButton": ".vs-l-organization__title",
+        "getYourBoardStarred": ".vs-u-gap--right",
+        "searchButton": ".vs-c-project-search",
+        "showFinishedSprintsButton": "button[name='show_finished_sprints']",
+        "showTableViewButton": ".vs-c-sprint-info > button:nth-of-type(2)",
+        "moreOptionsButton": ".el-dropdown",
+        "showFiltersButton": ".vs-c-filter",
+        "notificationButton": ".vs-c-notification",
+        "howItWorksButton": ".vs-l-project__options > .vs-c-btn"
+    }
+}
