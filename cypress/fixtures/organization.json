@@ -8,5 +8,12 @@
         "teamMenagment": "a[href='/organizations/820/teams']",
         "reports": "a[href='/organizations/820/reports']",
         "configuration": "a[href='/organizations/820/settings']"
+    },
+    "newOrganization": {
+        "organizationNameInput": "input[name='name']",
+        "uploadOrganizationLogoButton": ".el-upload-dragger",
+        "closeButton": "button[name='close-new-board-modal-btn']",
+        "nextButton": "button[name='next_btn']",
+        "backButton": "button[name='prev_btn']"
     }
 }
