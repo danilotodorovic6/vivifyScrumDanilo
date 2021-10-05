@@ -1,0 +1,12 @@
+{
+    "organizationSidebar": {
+        "boards": "div > a[href='/organizations/820/boards']",
+        "projects": "a[href='/organizations/820/projects']",
+        "invoicing": "a[href='/organizations/820/invoice']",
+        "clients": "a[href='/organizations/820/clients']",
+        "worklogs": "a[href='/organizations/820/worklogs']",
+        "teamMenagment": "a[href='/organizations/820/teams']",
+        "reports": "a[href='/organizations/820/reports']",
+        "configuration": "a[href='/organizations/820/settings']"
+    }
+}
