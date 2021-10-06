@@ -1,0 +1,45 @@
+{
+    "boardSidebar": {
+        "productBacklog": ".vs-l-project__menu a[href='/boards/920']",
+        "stats": "a[href='/boards/920/stats']",
+        "history": "a[href='/boards/920/history']",
+        "labels": "a[href='/boards/920/labels']",
+        "files": "a[href='/boards/920/files']",
+        "documents": "a[href='/boards/920/documents']",
+        "worklogs": "a[href='/boards/920/worklogs']",
+        "teamMembers": "a[href='/boards/920/team']",
+        "trash": "a[href='/boards/920/trash']",
+        "configuration": "a[href='/boards/920/settings']"
+    },
+    "newBoard": {
+        "chooseOrganizationButton": ".el-input__inner",
+        "chooseOrganizationList": ".el-select-dropdown__item",
+        "boardTitle": "input[name='name']",
+        "boardType": {
+            "scrum": "[name='type_scrum']",
+            "kanban": "[name='type_kanban']"
+        },
+        "uploadBoardLogo": ".el-upload--text",
+        "closeButton": "button[name='close-new-board-modal-btn']",
+        "nextButton": "button[name='next_btn']",
+        "backButton": "button[name='prev_btn']"
+    },
+    "boardInfo": {
+        "boardDetails": {
+            "boardTitleInput": "input[name='name']]",
+            "boardCodeInput": "input[name='code']]",
+            "boardDescriptionInput": "textarea[name='description']",
+            "updateBoardInfoButton": ".vs-u-text--left > button[type='submit']",
+            "changingOrganiation": ".vs-c-dropdown-underline input[type='text']",
+            "selectingOrganization": ".vs-c-board-dropdown-item",
+            "changingBoardType": ".el-icon-caret-bottom",
+            "boardTypes": {
+                "scrumType": ".el-dropdown-menu li:nth-of-type(1)",    
+                "kanbanType": ".el-dropdown-menu li:nth-of-type(2)"        
+            },
+            "uploadLogo": ".vs-c-img--board-avatar-lg",
+            "archiveOrganization": ".vs-c-btn--success",
+            "deleteOrganization": ".vs-c-btn--warning"
+        }
+    }
+}
