@@ -26,8 +26,8 @@
     },
     "boardInfo": {
         "boardDetails": {
-            "boardTitleInput": "input[name='name']]",
-            "boardCodeInput": "input[name='code']]",
+            "boardTitleInput": "input[name='name']",
+            "boardCodeInput": "input[name='code']",
             "boardDescriptionInput": "textarea[name='description']",
             "updateBoardInfoButton": ".vs-u-text--left > button[type='submit']",
             "changingOrganiation": ".vs-c-dropdown-underline input[type='text']",
