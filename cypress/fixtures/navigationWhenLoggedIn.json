@@ -6,7 +6,6 @@
         "howItWorksButton": ".vs-l-project__options > .vs-c-btn"
     },
     "boardNavigation": {
-        "siteLogo": ".vs-c-site-logo",
         "organizationButton": ".vs-l-organization__title",
         "getYourBoardStarred": ".vs-u-gap--right",
         "searchButton": ".vs-c-project-search",
