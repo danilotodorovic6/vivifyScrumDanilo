@@ -1,0 +1,55 @@
+{
+    "organizationSidebar": {
+        "boards": "div > a[href='/organizations/820/boards']",
+        "projects": "a[href='/organizations/820/projects']",
+        "invoicing": "a[href='/organizations/820/invoice']",
+        "clients": "a[href='/organizations/820/clients']",
+        "worklogs": "a[href='/organizations/820/worklogs']",
+        "teamMenagment": "a[href='/organizations/820/teams']",
+        "reports": "a[href='/organizations/820/reports']",
+        "configuration": "a[href='/organizations/820/settings']"
+    },
+    "newOrganization": {
+        "organizationNameInput": "input[name='name']",
+        "uploadOrganizationLogoButton": ".el-upload-dragger",
+        "closeButton": "button[name='close-new-board-modal-btn']",
+        "nextButton": "button[name='next_btn']",
+        "backButton": "button[name='prev_btn']"
+    },
+    "organizationInfo": {
+        "uploadLogo": ".vs-c-settings-avatar-uploader",
+        "organizationNameInput": "input[name='name']",
+        "updateOrganizationInfo": ".vs-c-settings-section__info button",
+        "checkWorkdays": {
+            "monday": ".vs-c-settings-section-item-wrapper:nth-of-type(1) .vs-c-checkbox-list-item__check-container",
+            "tuesday": ".vs-c-settings-section-item-wrapper:nth-of-type(2) .vs-c-checkbox-list-item__check-container",
+            "wednesday": ".vs-c-settings-section-item-wrapper:nth-of-type(3) .vs-c-checkbox-list-item__check-container",
+            "thursday": ".vs-c-settings-section-item-wrapper:nth-of-type(4) .vs-c-checkbox-list-item__check-container",
+            "friday": ".vs-c-settings-section-item-wrapper:nth-of-type(5) .vs-c-checkbox-list-item__check-container",
+            "saturday": ".vs-c-settings-section-item-wrapper:nth-of-type(6) .vs-c-checkbox-list-item__check-container",
+            "sunday": ".vs-c-settings-section-item-wrapper:nth-of-type(7) .vs-c-checkbox-list-item__check-container"
+        },
+        "calendarStartDay": {
+            "changeStartDayButton": ".vs-c-material-input > .vs-c-dropdown-underline button",
+            "startDays": {
+                "monday": ".vs-c-users-stats-dropdown > li:nth-of-type(1)",
+                "saturday": ".vs-c-users-stats-dropdown > li:nth-of-type(2)",
+                "sunday": ".vs-c-users-stats-dropdown > li:nth-of-type(3)"
+            }
+        },
+        "vacationDays": {
+            "vacationDaysPerYearInput": "input[name='vacationDays']",
+            "numberOfWorkingMonthsInput": "input[name='numOfWorkingMonthsForAdditionalDays']",
+            "aditionalVacationDaysInput": "input[name='additionalVacationDays']",
+            "expirationPeriodForUnusedVacationDaysButton": ".el-icon-caret-top",
+            "expiratonPeriods": {
+                "noExpiryDate": ".el-select-dropdown__list > li:nth-of-type(1)",
+                "endOfTheYear": ".el-select-dropdown__list > li:nth-of-type(2)",
+                "middleOfTheNextYear": ".el-select-dropdown__list > li:nth-of-type(3)",
+                "endOfTheNextYear": ".el-select-dropdown__list > li:nth-of-type(4)"
+            }
+        },
+        "archiveOrganization": ".vs-c-btn--success",
+        "deleteOrganization": ".vs-c-btn--warning"
+    }
+}
