@@ -19,5 +19,8 @@
         "numOfUsersLessThan1": 0,
         "numOfUsersMoreThan10": 11,
         "numOfUsersNotInteger": "invalid"
+    },
+    "organization": {
+        "name": "New organization"
     }
 }

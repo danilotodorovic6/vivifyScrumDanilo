@@ -1,6 +1,6 @@
 {
     "colapseSideBar": ".vs-c-sidebar-info",
-    "addOrganization": ".vs-c-tooltip-active-sprints .vs-c-list > li:nth-of-type(1)",
+    "addOrganization": ".vs-c-tooltip-active-sprints .vs-c-list",
     "addBoard": ".vs-c-tooltip-active-sprints .vs-c-list > li:nth-of-type(2)",
     "importBoardFrom": ".vs-c-tooltip-active-sprints .vs-c-list > li:nth-of-type(3)",
     "openOrganization": "span > a[href='/organizations/820/boards']",
