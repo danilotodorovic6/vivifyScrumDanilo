@@ -6,5 +6,18 @@
     "invalidUser": {
         "email": "invalid@invalid.com",
         "password": "invalid"
+    },
+    "registerUser": {
+        "email": "random@random1.com",
+        "password": "random",
+        "numOfUsers": 1
+    },
+    "registerInvalidUser": {
+        "emailWithout@": "invalidmail.com",
+        "emailWithout.": "invalid@mail",
+        "passwordLessThan5Chars": "pass",
+        "numOfUsersLessThan1": 0,
+        "numOfUsersMoreThan10": 11,
+        "numOfUsersNotInteger": "invalid"
     }
 }
