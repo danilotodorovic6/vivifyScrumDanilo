@@ -1,0 +1,10 @@
+{
+    "user": {
+        "email": "danilo.todorovic@vivify.ideas.com",
+        "password": "pass1234"
+    },
+    "invalidUser": {
+        "email": "invalid@invalid.com",
+        "password": "invalid"
+    }
+}

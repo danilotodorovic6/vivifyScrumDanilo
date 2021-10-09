@@ -15,5 +15,8 @@
         "showFiltersButton": ".vs-c-filter",
         "notificationButton": ".vs-c-notification",
         "howItWorksButton": ".vs-l-project__options > .vs-c-btn"
+    },
+    "accountNavigation": {
+        "logoutButton": ".vs-c-logout"
     }
 }

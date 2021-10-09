@@ -1,0 +1,8 @@
+{
+    "accountSidebar": {
+        "myAssigments": "a[href='/account/my-assignments']",
+        "history": "a[href='/account/history']",
+        "notifications": "a[href='/account/notifications']",
+        "profile": "a[href='/account/settings']"
+    }
+}
