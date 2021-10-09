@@ -16,5 +16,13 @@ describe("organization", () => {
         cy.get(organization.newOrganization.nextButton).click();
         cy.get(organization.newOrganization.nextButton).click();
         cy.get(organization.newOrganization.boardCreatedOKButton).click();
+        cy.url().should("contain", "/organizations")
+    });
+    it("delete", () => {
+        cy.get(organization.organizationSidebar.configuration).click();
+        cy.get(organization.organizationInfo.deleteOrganization.deleteClick).click();
+        cy.get(organization.organizationInfo.deleteOrganization.passwordInput).type(data.user.password);
+        cy.get(organization.organizationInfo.deleteOrganization.saveButton).click();
+        cy.url().should("not.contain", "/organizations")
     });
 });

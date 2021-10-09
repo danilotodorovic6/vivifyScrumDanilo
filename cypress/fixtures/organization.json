@@ -1,13 +1,13 @@
 {
     "organizationSidebar": {
-        "boards": "div > a[href='/organizations/820/boards']",
-        "projects": "a[href='/organizations/820/projects']",
-        "invoicing": "a[href='/organizations/820/invoice']",
-        "clients": "a[href='/organizations/820/clients']",
-        "worklogs": "a[href='/organizations/820/worklogs']",
-        "teamMenagment": "a[href='/organizations/820/teams']",
-        "reports": "a[href='/organizations/820/reports']",
-        "configuration": "a[href='/organizations/820/settings']"
+        "boards": "li:nth-of-type(1) .vs-c-site-logo",
+        "projects": "li:nth-of-type(2) .vs-c-site-logo",
+        "invoicing": "li:nth-of-type(3) .vs-c-site-logo",
+        "clients": "li:nth-of-type(4) .vs-c-site-logo",
+        "worklogs": "li:nth-of-type(5) .vs-c-site-logo",
+        "teamMenagment": "li:nth-of-type(6) .vs-c-site-logo",
+        "reports": "li:nth-of-type(7) .vs-c-site-logo",
+        "configuration": "li:nth-of-type(8) .vs-c-site-logo"
     },
     "newOrganization": {
         "addNew": ".vs-c-my-organization--add-new",
@@ -52,6 +52,11 @@
             }
         },
         "archiveOrganization": ".vs-c-btn--success",
-        "deleteOrganization": ".vs-c-btn--warning"
+        "deleteOrganization": {
+            "deleteClick": ".vs-c-btn--warning",
+            "passwordInput": "input[type='password']",
+            "saveButton": "button[name='save-btn']",
+            "cancelButton": "button[name='cancel-btn']"
+        }
     }
 }
