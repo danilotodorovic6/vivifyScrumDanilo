@@ -67,6 +67,8 @@
         "saveComment": "button[name='comment_save']",
         "deleteComment": "button[name='delete_comment']",
         "changeSprint": "div[name='sprint-info-dropdown']",
-        "backlog": ".vs-c-dropdown li:nth-of-type(1)"
+        "backlog": ".vs-c-dropdown li:nth-of-type(1)",
+        "taskOptions": "div[title='Options']",
+        "deleteOption": "li[name='delete-option']"
     }
 }

@@ -49,6 +49,15 @@ describe("board", () => {
         cy.get(board.boardTasks.deleteComment).click({force: true});
         cy.get(board.boardInfo.boardDetails.deleteBoard.saveButton).click();
     });
+    it("moving story to backlog", () => {
+        cy.get(board.boardTasks.changeSprint).click();
+        cy.get(board.boardTasks.backlog).click();
+    });
+    it("delete story", () => {
+        cy.get(board.boardTasks.taskOptions).click();
+        cy.get(board.boardTasks.deleteOption).click();
+        cy.get(board.boardInfo.boardDetails.deleteBoard.saveButton).click();
+    })
     it("delete board", () => {
         cy.get(board.boardSidebar.configuration).click();
         cy.get(board.boardInfo.boardDetails.deleteBoard.deleteBoardClick).click();
