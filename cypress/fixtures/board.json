@@ -1,15 +1,15 @@
 {
     "boardSidebar": {
-        "productBacklog": ".vs-l-project__menu a[href='/boards/920']",
-        "stats": "a[href='/boards/920/stats']",
-        "history": "a[href='/boards/920/history']",
-        "labels": "a[href='/boards/920/labels']",
-        "files": "a[href='/boards/920/files']",
-        "documents": "a[href='/boards/920/documents']",
-        "worklogs": "a[href='/boards/920/worklogs']",
-        "teamMembers": "a[href='/boards/920/team']",
-        "trash": "a[href='/boards/920/trash']",
-        "configuration": "a[href='/boards/920/settings']"
+        "productBacklog": "li:nth-of-type(1) .vs-c-site-logo",
+        "stats": "li:nth-of-type(2) .vs-c-site-logo",
+        "history": "li:nth-of-type(3) .vs-c-site-logo",
+        "labels": "li:nth-of-type(4) .vs-c-site-logo",
+        "files": "li:nth-of-type(5) .vs-c-site-logo",
+        "documents": "li:nth-of-type(6) .vs-c-site-logo",
+        "worklogs": "li:nth-of-type(7) .vs-c-site-logo",
+        "teamMembers": "li:nth-of-type(8) .vs-c-site-logo",
+        "trash": "li:nth-of-type(9) .vs-c-site-logo",
+        "configuration": "li:nth-of-type(10) .vs-c-site-logo"
     },
     "newBoard": {
         "addNewBoard": "li[title='Add new Board']",
@@ -23,7 +23,8 @@
         "uploadBoardLogo": ".el-upload--text",
         "closeButton": "button[name='close-new-board-modal-btn']",
         "nextButton": "button[name='next_btn']",
-        "backButton": "button[name='prev_btn']"
+        "backButton": "button[name='prev_btn']",
+        "boardDeletedOKButton": ".vs-c-modal--features-button > .vs-c-btn"
     },
     "boardInfo": {
         "boardDetails": {
@@ -39,8 +40,33 @@
                 "kanbanType": ".el-dropdown-menu li:nth-of-type(2)"        
             },
             "uploadLogo": ".vs-c-img--board-avatar-lg",
-            "archiveOrganization": ".vs-c-btn--success",
-            "deleteOrganization": ".vs-c-btn--warning"
+            "archiveBoard": ".vs-c-btn--success",
+            "deleteBoard": {
+                "deleteBoardClick": ".vs-c-btn--warning",
+                "saveButton": "button[name='save-btn']",
+                "cancelButton": "button[name='cancel-btn']"
+                }
         }
+    },
+    "boardTasks": {
+        "addColumn": ".vs-add-column-btn-gap button",
+        "columnTitle": ".vs-c-col__title",
+        "addTask": ".vs-c-col:nth-of-type(3) .vs-c-task-list button",
+        "taskName": "textarea[name='item_name']",
+        "saveTask": "button[name='new_item_save']",
+        "cancelTask": "button[name='new_item_cancel']",
+        "createdTask": ".vs-u-padding--sm",
+        "taskTitle": ".vs-c-task__title .vue-simple-markdown",
+        "saveTitle": "button[name='item_name_save']",
+        "cancelTitle": "button[name='item_name_cancel']",
+        "description": "button[name='item_description_edit']",
+        "descriptionText": "textarea[name='description']",
+        "saveDescription": "button[name='item_description_save']",
+        "cancelDescription": "button[name='item_description_cancel']",
+        "comment": "textarea[name='new_comment']",
+        "saveComment": "button[name='comment_save']",
+        "deleteComment": "button[name='delete_comment']",
+        "changeSprint": "div[name='sprint-info-dropdown']",
+        "backlog": ".vs-c-dropdown li:nth-of-type(1)"
     }
 }

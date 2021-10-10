@@ -24,6 +24,10 @@
         "name": "New organization"
     },
     "board": {
-        "title": "New board"
+        "title": "New board",
+        "column": "QA column",
+        "task": "New story",
+        "description": "This is description",
+        "comment": "This is a comment"
     }
 }
