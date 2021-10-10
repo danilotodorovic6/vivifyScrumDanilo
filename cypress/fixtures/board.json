@@ -12,6 +12,7 @@
         "configuration": "a[href='/boards/920/settings']"
     },
     "newBoard": {
+        "addNewBoard": "li[title='Add new Board']",
         "chooseOrganizationButton": ".el-input__inner",
         "chooseOrganizationList": ".el-select-dropdown__item",
         "boardTitle": "input[name='name']",

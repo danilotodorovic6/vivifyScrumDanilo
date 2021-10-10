@@ -1,6 +1,5 @@
 /// <reference types = "Cypress" />
 
-import sidebar from "../fixtures/sidebar.json";
 import loginPage from "../fixtures/login.json";
 import data from "../fixtures/data.json";
 import organization from "../fixtures/organization.json";

@@ -22,5 +22,8 @@
     },
     "organization": {
         "name": "New organization"
+    },
+    "board": {
+        "title": "New board"
     }
 }
