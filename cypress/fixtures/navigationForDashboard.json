@@ -1,5 +1,6 @@
 {
     "vivifyScrumLogoLink": ".vsp-c-header a[href='https://cypress-api.vivifyscrum-stage.com']",
+    "starterPack": "[title='Starter']",
     "pricingLink": ".vsp-c-navigation > a[href='https://cypress-api.vivifyscrum-stage.com/pricing']:nth-of-type(1)",
     "insightsLink": ".vsp-c-navigation > a[href='https://cypress-api.vivifyscrum-stage.com/insights']",
     "featuresLink": ".vsp-c-navigation > a[href='https://cypress-api.vivifyscrum-stage.com/features']",

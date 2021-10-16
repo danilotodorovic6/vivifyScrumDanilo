@@ -1,0 +1,33 @@
+{
+    "user": {
+        "email": "danilo.todorovic@vivify.ideas.com",
+        "password": "pass1234"
+    },
+    "invalidUser": {
+        "email": "invalid@invalid.com",
+        "password": "invalid"
+    },
+    "registerUser": {
+        "email": "random@random1.com",
+        "password": "random",
+        "numOfUsers": 1
+    },
+    "registerInvalidUser": {
+        "emailWithout@": "invalidmail.com",
+        "emailWithout.": "invalid@mail",
+        "passwordLessThan5Chars": "pass",
+        "numOfUsersLessThan1": 0,
+        "numOfUsersMoreThan10": 11,
+        "numOfUsersNotInteger": "invalid"
+    },
+    "organization": {
+        "name": "New organization"
+    },
+    "board": {
+        "title": "New board",
+        "column": "QA column",
+        "task": "New story",
+        "description": "This is description",
+        "comment": "This is a comment"
+    }
+}

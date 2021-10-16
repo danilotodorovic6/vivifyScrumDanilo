@@ -1,0 +1,23 @@
+{
+  "name": "vivifyscrum",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "cypress": "^8.5.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "cypress": "./node_modules/.bin/cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/danilotodorovic6/vivifyScrumDanilo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/danilotodorovic6/vivifyScrumDanilo/issues"
+  },
+  "homepage": "https://github.com/danilotodorovic6/vivifyScrumDanilo#readme"
+}
