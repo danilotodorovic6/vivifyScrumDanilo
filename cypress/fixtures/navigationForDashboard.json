@@ -1,6 +1,6 @@
 {
     "vivifyScrumLogoLink": ".vsp-c-header a[href='https://cypress-api.vivifyscrum-stage.com']",
-    "starterPack": "[title='Starter']",
+    "starterPack": ".vsp-c-pricing-plan-list--annual a[title='Starter']",
     "pricingLink": ".vsp-c-navigation > a[href='https://cypress-api.vivifyscrum-stage.com/pricing']:nth-of-type(1)",
     "insightsLink": ".vsp-c-navigation > a[href='https://cypress-api.vivifyscrum-stage.com/insights']",
     "featuresLink": ".vsp-c-navigation > a[href='https://cypress-api.vivifyscrum-stage.com/features']",
@@ -10,5 +10,6 @@
     "downloadAppLink": ".vsp-c-navigation > a[href='https://cypress-api.vivifyscrum-stage.com/scrum-app-download']",
     "loginLink": "a[href='https://cypress.vivifyscrum-stage.com/login']",
     "startYourFreeTrialLink": ".vsp-c-navigation > .vsp-c-btn--primary",
-    "tryDemoLink": "a#tryDemoHeaderButton"
+    "tryDemoLink": "a#tryDemoHeaderButton",
+    "cookieGotIt": "#cookieGotIt"
 }
