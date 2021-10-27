@@ -6,16 +6,32 @@ import data from "../fixtures/data.json";
 import errorMessages from "../fixtures/errorMessages.json";
 import signUp from "../fixtures/sign-up.json";
 
+let faker = require("faker");
+let randomEmail = faker.internet.email();
+
 describe("register", () => {
     before(() => {
         cy.visit("/");
         cy.url().should("contain", "cypress.vivifyscrum-stage.com");
         cy.get(loginPage.signUpLink).click();
-        let elementExists = document.getElementById(navigationForDashboard.cookieGotIt);
-        if(elementExists){
-            cy.get(navigationForDashboard.cookieGotIt).click();
-        }
-        cy.get(navigationForDashboard.starterPack).click({force: true});
+        cy.get("body").then(($body) => {
+            if ($body.find(navigationForDashboard.cookieGotIt).length > 0) {
+                cy.get(navigationForDashboard.cookieGotIt).should("exist");
+              //evaluates as true if button exists at all
+              cy.get(navigationForDashboard.cookieGotIt).then(($header) => {
+                //you get here only if button EXISTS but is VISIBLE
+                if ($header.is(":visible")) {
+                    cy.get(navigationForDashboard.cookieGotIt).should("be.visible");
+                } else {
+                  //you get here only if button EXISTS but is INVISIBLE
+                  cy.get(navigationForDashboard.cookieGotIt).should("not.be.visible");
+                }
+              });
+            } else {
+              //you get here only if button doesnt EXISTS
+            }
+          });
+          cy.get(navigationForDashboard.starterPack).click({force: true});
         cy.url().should("contain", "/sign-up");
 
     });
@@ -131,11 +147,16 @@ describe("register", () => {
             cy.get(signUp.errorMessages).eq(2).should("be.visible").and("have.text", errorMessages.invalidNumberString);
         });
     });
-    it("with valid credentials", () => {
-        cy.get(register.emailInput).clear().type(data.registerUser.email);
+    it.only("with valid credentials", () => {
+        cy.intercept("POST", "api/v2/register").as("registeredUser")
+        cy.get(register.emailInput).clear().type(randomEmail);
         cy.get(register.passwordInput).clear().type(data.registerUser.password);
         cy.get(register.numberOfUsersInput).clear().type(data.registerUser.numOfUsers);
         cy.get(register.startYourFreeTrialButton).click();
-        cy.url().should("not.contain", "/sign-up");
+        cy.url().should("not.contain", "/sign-up").and("contain", "/my-organizations");
+        cy.wait("@registeredUser").then((intercept) => {
+            expect(intercept.request.body.email).to.eq(randomEmail);
+            expect(intercept.response.statusCode).to.eq(200)
+        })
     });
 });
