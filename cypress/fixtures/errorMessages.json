@@ -6,5 +6,6 @@
     "invalidNumberString": "The number of users field must be an integer",
     "invalidNumberInteger": "The number of users must be between 1 and 10",
     "termsAndPrivacy": "The agree to terms and privacy policy field is required",
-    "existingEmail": "User with that email already exists"
+    "existingEmail": "User with that email already exists",
+    "passOrEmailInvalid": "Oops! Your email/password combination is incorrect"
 }

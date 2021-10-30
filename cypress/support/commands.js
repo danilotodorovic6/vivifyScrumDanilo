@@ -23,3 +23,11 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+Cypress.Commands.add("errorMessageFunction", (errorSection, errorMessage) => {
+    cy.get(".el-form-item")
+    .contains(errorSection)
+    .parent()
+    .find(".el-form-item__error")
+    .should("be.visible")
+    .and("have.text", errorMessage);
+})
