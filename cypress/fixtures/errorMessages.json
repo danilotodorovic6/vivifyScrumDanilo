@@ -1,0 +1,10 @@
+{
+    "invalidEmail": "The email field must be a valid email",
+    "requiredPassword": "The password field is required",
+    "requiredNumberOfUsers": "The number of users field is required",
+    "invalidPassword5Characters": "The password field must be at least 5 characters",
+    "invalidNumberString": "The number of users field must be an integer",
+    "invalidNumberInteger": "The number of users must be between 1 and 10",
+    "termsAndPrivacy": "The agree to terms and privacy policy field is required",
+    "existingEmail": "User with that email already exists"
+}
