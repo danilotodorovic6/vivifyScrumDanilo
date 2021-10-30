@@ -35,14 +35,20 @@ describe("register", () => {
         cy.url().should("contain", "/sign-up");
 
     });
-    it("without credentials", () => {
+    it.only("without credentials", () => {
         cy.get(register.startYourFreeTrialButton).click();
         cy.url().should("contain", "/sign-up");
-        cy.get(signUp.forms).then(() => {
-            cy.get(signUp.errorMessages).eq(0).should("be.visible").and("have.text", errorMessages.invalidEmail);
-            cy.get(signUp.errorMessages).eq(1).should("be.visible").and("have.text", errorMessages.requiredPassword);
-            cy.get(signUp.errorMessages).eq(2).should("be.visible").and("have.text", errorMessages.requiredNumberOfUsers);
-        });
+        cy.get(".el-form-item")
+            .contains("Your Email")
+            .parent()
+            .find(".el-form-item__error")
+            .should("be.visible")
+            .and("have.text", errorMessages.invalidEmail);
+        // cy.get(signUp.forms).then(() => {
+        //     cy.get(signUp.errorMessages).eq(0).should("be.visible").and("have.text", errorMessages.invalidEmail);
+        //     cy.get(signUp.errorMessages).eq(1).should("be.visible").and("have.text", errorMessages.requiredPassword);
+        //     cy.get(signUp.errorMessages).eq(2).should("be.visible").and("have.text", errorMessages.requiredNumberOfUsers);
+        // });
         
     });
     it("without email", () => {
@@ -147,7 +153,7 @@ describe("register", () => {
             cy.get(signUp.errorMessages).eq(2).should("be.visible").and("have.text", errorMessages.invalidNumberString);
         });
     });
-    it.only("with valid credentials", () => {
+    it("with valid credentials", () => {
         cy.intercept("POST", "api/v2/register").as("registeredUser")
         cy.get(register.emailInput).clear().type(randomEmail);
         cy.get(register.passwordInput).clear().type(data.registerUser.password);
