@@ -1,16 +1,13 @@
 /// <reference types = "Cypress" />
 import loginPage from "../fixtures/login.json";
-import register from "../fixtures/sign-up.json";
 import navigationForDashboard from "../fixtures/navigationForDashboard.json";
 import data from "../fixtures/data.json";
-import errorMessages from "../fixtures/errorMessages.json";
 import signUp from "../fixtures/sign-up.json";
-
-let faker = require("faker");
-let randomEmail = faker.internet.email();
+import registration from "../models/registerModule";
+import errorMessages from "../fixtures/errorMessages.json";
 
 describe("register", () => {
-    before(() => {
+    beforeEach(() => {
         cy.visit("/");
         cy.url().should("contain", "cypress.vivifyscrum-stage.com");
         cy.get(loginPage.signUpLink).click();
@@ -33,136 +30,78 @@ describe("register", () => {
           });
           cy.get(navigationForDashboard.starterPack).click({force: true});
         cy.url().should("contain", "/sign-up");
-
     });
-    it.only("without credentials", () => {
-        cy.get(register.startYourFreeTrialButton).click();
+    it("without credentials", () => {
+        registration.register({email: "", password: "", numberOfUsers: "", termsAndPrivacy: "unchecked"});
         cy.url().should("contain", "/sign-up");
-        cy.get(".el-form-item")
-            .contains("Your Email")
-            .parent()
-            .find(".el-form-item__error")
-            .should("be.visible")
-            .and("have.text", errorMessages.invalidEmail);
-        // cy.get(signUp.forms).then(() => {
-        //     cy.get(signUp.errorMessages).eq(0).should("be.visible").and("have.text", errorMessages.invalidEmail);
-        //     cy.get(signUp.errorMessages).eq(1).should("be.visible").and("have.text", errorMessages.requiredPassword);
-        //     cy.get(signUp.errorMessages).eq(2).should("be.visible").and("have.text", errorMessages.requiredNumberOfUsers);
-        // });
-        
+        cy.errorMessageFunction("Your Email", errorMessages.invalidEmail);
+        cy.errorMessageFunction("Password", errorMessages.requiredPassword);
+        cy.errorMessageFunction("Number of users", errorMessages.requiredNumberOfUsers);
+        cy.errorMessageWithoutLabel(errorMessages.termsAndPrivacy);
     });
     it("without email", () => {
-        cy.get(register.emailInput).clear();
-        cy.get(register.passwordInput).clear().type(data.registerUser.password);
-        cy.get(register.numberOfUsersInput).clear().type(data.registerUser.numOfUsers);
-        cy.get(register.startYourFreeTrialButton).click();
+        registration.register({email: ""});
         cy.url().should("contain", "/sign-up");
         cy.get(signUp.forms).then(() => {
-            cy.get(signUp.errorMessages).eq(0).should("be.visible").and("have.text", errorMessages.invalidEmail);
+        cy.errorMessageFunction("Your Email", errorMessages.invalidEmail);
         });
     });
     it("without password", () => {
-        cy.get(register.emailInput).clear().type(data.registerUser.email);
-        cy.get(register.passwordInput).clear();
-        cy.get(register.numberOfUsersInput).clear().type(data.registerUser.numOfUsers);
-        cy.get(register.startYourFreeTrialButton).click();
+        registration.register({password: ""});
         cy.url().should("contain", "/sign-up");
-        cy.get(signUp.forms).then(() => {
-            cy.get(signUp.errorMessages).eq(1).should("be.visible").and("have.text", errorMessages.requiredPassword);
-        });        
+        cy.errorMessageFunction("Password", errorMessages.requiredPassword);
     });
     it("without number of users", () => {
-        cy.get(register.emailInput).clear().type(data.registerUser.email);
-        cy.get(register.passwordInput).clear().type(data.registerUser.password);
-        cy.get(register.numberOfUsersInput).clear();
-        cy.get(register.startYourFreeTrialButton).click();
+        registration.register({numberOfUsers: ""});
         cy.url().should("contain", "/sign-up");
-        cy.get(signUp.forms).then(() => {
-            cy.get(signUp.errorMessages).eq(2).should("be.visible").and("have.text", errorMessages.requiredNumberOfUsers);
-        });
+        cy.errorMessageFunction("Number of users", errorMessages.requiredNumberOfUsers);
+    });
+    it("without terms and privacy checked", () => {
+        registration.register({termsAndPrivacy: "unchecked"});
+        cy.url().should("contain", "/sign-up");
+        cy.errorMessageWithoutLabel(errorMessages.termsAndPrivacy);
     });
     it("with email without @", () => {
-        cy.get(register.emailInput).clear().type(data.registerInvalidUser["emailWithout@"]);
-        cy.get(register.passwordInput).clear().type(data.registerUser.password);
-        cy.get(register.numberOfUsersInput).clear().type(data.registerUser.numOfUsers);
-        cy.get(register.startYourFreeTrialButton).click();
+        registration.register({email: data.registerInvalidUser["emailWithout@"]});
         cy.url().should("contain", "/sign-up");
-        cy.get(signUp.forms).then(() => {
-            cy.get(signUp.errorMessages).eq(0).should("be.visible").and("have.text", errorMessages.invalidEmail);
-        });
+        cy.errorMessageFunction("Your Email", errorMessages.invalidEmail);
     });
     it("with email without .", () => {
-        cy.get(register.emailInput).clear().type(data.registerInvalidUser["emailWithout."]);
-        cy.get(register.passwordInput).clear().type(data.registerUser.password);
-        cy.get(register.numberOfUsersInput).clear().type(data.registerUser.numOfUsers);
-        cy.get(register.startYourFreeTrialButton).click();
+        registration.register({email: data.registerInvalidUser["emailWithout."]});
         cy.url().should("contain", "/sign-up");
-        cy.get(signUp.forms).then(() => {
-            cy.get(signUp.errorMessages).eq(0).should("be.visible").and("have.text", errorMessages.invalidEmail);
-        });
+        cy.errorMessageFunction("Your Email", errorMessages.invalidEmail);
     });
     it("with existing email", () => {
-        cy.get(register.emailInput).clear().type(data.user.email);
-        cy.get(register.passwordInput).clear().type(data.registerUser.password);
-        cy.get(register.numberOfUsersInput).clear().type(data.registerUser.numOfUsers);
-        cy.get(register.startYourFreeTrialButton).click();
+        registration.register({email: data.user.email});
         cy.url().should("contain", "/sign-up");
-        cy.get(signUp.forms).then(() => {
-            cy.get(signUp.existingMail).eq(0).should("be.visible").and("have.text", errorMessages.existingEmail);
-        });
+        cy.alertErrorMessage(errorMessages.existingEmail);
     });
     it("with password less than 5 characters", () => {
-        cy.get(register.emailInput).clear().type(data.registerUser.email);
-        cy.get(register.passwordInput).clear().type(data.registerInvalidUser.passwordLessThan5Chars);
-        cy.get(register.numberOfUsersInput).clear().type(data.registerUser.numOfUsers);
-        cy.get(register.startYourFreeTrialButton).click();
+        registration.register({password: data.registerInvalidUser.passwordLessThan5Chars});
         cy.url().should("contain", "/sign-up");
-        cy.get(signUp.forms).then(() => {
-            cy.get(signUp.errorMessages).eq(1).should("be.visible").and("have.text", errorMessages.invalidPassword5Characters);
-        });
-
+        cy.errorMessageFunction("Password", errorMessages.invalidPassword5Characters);
     });
     it("with number of users less than 1", () => {
-        cy.get(register.emailInput).clear().type(data.registerUser.email);
-        cy.get(register.passwordInput).clear().type(data.registerUser.password);
-        cy.get(register.numberOfUsersInput).clear().type(data.registerInvalidUser.numOfUsersLessThan1);
-        cy.get(register.startYourFreeTrialButton).click();
+        registration.register({numberOfUsers: data.registerInvalidUser.numOfUsersLessThan1});
         cy.url().should("contain", "/sign-up");
-        cy.get(signUp.forms).then(() => {
-            cy.get(signUp.errorMessages).eq(2).should("be.visible").and("have.text", errorMessages.invalidNumberInteger);
-        });
-
+        cy.errorMessageFunction("Number of users", errorMessages.invalidNumberInteger);
     });
     it("with number of users more than 10", () => {
-        cy.get(register.emailInput).clear().type(data.registerUser.email);
-        cy.get(register.passwordInput).clear().type(data.registerUser.password);
-        cy.get(register.numberOfUsersInput).clear().type(data.registerInvalidUser.numOfUsersMoreThan10);
-        cy.get(register.startYourFreeTrialButton).click();
+        registration.register({numberOfUsers: data.registerInvalidUser.numOfUsersMoreThan10});
         cy.url().should("contain", "/sign-up");
-        cy.get(signUp.forms).then(() => {
-            cy.get(signUp.errorMessages).eq(2).should("be.visible").and("have.text", errorMessages.invalidNumberInteger);
-        });
+        cy.errorMessageFunction("Number of users", errorMessages.invalidNumberInteger);
     });
     it("with number of users not an integer", () => {
-        cy.get(register.emailInput).clear().type(data.registerUser.email);
-        cy.get(register.passwordInput).clear().type(data.registerUser.password);
-        cy.get(register.numberOfUsersInput).clear().type(data.registerInvalidUser.numOfUsersNotInteger);
-        cy.get(register.startYourFreeTrialButton).click();
+        registration.register({numberOfUsers: data.registerInvalidUser.numOfUsersNotInteger});
         cy.url().should("contain", "/sign-up");
-        cy.get(signUp.forms).then(() => {
-            cy.get(signUp.errorMessages).eq(2).should("be.visible").and("have.text", errorMessages.invalidNumberString);
-        });
+        cy.errorMessageFunction("Number of users", errorMessages.invalidNumberString);
     });
     it("with valid credentials", () => {
         cy.intercept("POST", "api/v2/register").as("registeredUser")
-        cy.get(register.emailInput).clear().type(randomEmail);
-        cy.get(register.passwordInput).clear().type(data.registerUser.password);
-        cy.get(register.numberOfUsersInput).clear().type(data.registerUser.numOfUsers);
-        cy.get(register.startYourFreeTrialButton).click();
+        registration.register({});
         cy.url().should("not.contain", "/sign-up").and("contain", "/my-organizations");
         cy.wait("@registeredUser").then((intercept) => {
-            expect(intercept.request.body.email).to.eq(randomEmail);
-            expect(intercept.response.statusCode).to.eq(200)
-        })
+            expect(intercept.response.statusCode).to.eq(200);
+        });
     });
 });

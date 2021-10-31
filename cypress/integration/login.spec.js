@@ -37,12 +37,14 @@ describe("first cypress block", () => {
     });
     it("with invalid email", () => {
         authModule.login({email: data.invalidUser.email});
-        cy.get(loginPage.oopsError).find("span").should("be.visible").and("contain", errorMessages.passOrEmailInvalid)
+        authModule.errorMessage.should("have.length", 3);
+        cy.errorMessageWithoutLabel(errorMessages.passOrEmailInvalid)
         cy.url().should("contain", "/login");
     });
     it("with invalid password", () => {
         authModule.login({password: data.invalidUser.password});
-        cy.get(loginPage.oopsError).find("span").should("be.visible").and("contain", errorMessages.passOrEmailInvalid)
+        authModule.errorMessage.should("have.length", 3);
+        cy.errorMessageWithoutLabel(errorMessages.passOrEmailInvalid)
         cy.url().should("contain", "/login");
     });
     it("login with pom", () => {

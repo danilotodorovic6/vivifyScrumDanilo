@@ -30,4 +30,18 @@ Cypress.Commands.add("errorMessageFunction", (errorSection, errorMessage) => {
     .find(".el-form-item__error")
     .should("be.visible")
     .and("have.text", errorMessage);
-})
+});
+Cypress.Commands.add("errorMessageWithoutLabel", (errorMessage) => {
+    cy.get(".el-form-item__error")
+    .last()
+    .should("be.visible")
+    .and("have.text", errorMessage);
+});
+Cypress.Commands.add("getElementFunction", (element, attribute, value) => {
+    return cy.get(`${element}[${attribute}='${value}']`);
+});
+Cypress.Commands.add("alertErrorMessage", (errorMessage) => {
+    cy.get(".el-message")
+    .should("be.visible")
+    .and("contain", errorMessage);
+});

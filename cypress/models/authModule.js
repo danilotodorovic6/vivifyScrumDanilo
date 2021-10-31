@@ -34,9 +34,12 @@ module.exports = {
     get logoutButton(){
         return cy.get(".vs-c-logout");
     },
+    get errorMessage(){
+        return cy.get(".el-form-item__error");
+    },
     login({ email = data.user.email, password = data.user.password }) {
         if(email == "" && password == "") {
-          this.loginButton.click();
+            this.loginButton.click();
         } 
         else if(email == ""){
             this.passwordInput.should("be.visible").type(password);

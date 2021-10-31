@@ -16,7 +16,7 @@
         "emailWithout@": "invalidmail.com",
         "emailWithout.": "invalid@mail",
         "passwordLessThan5Chars": "pass",
-        "numOfUsersLessThan1": 0,
+        "numOfUsersLessThan1": "0",
         "numOfUsersMoreThan10": 11,
         "numOfUsersNotInteger": "invalid"
     },
