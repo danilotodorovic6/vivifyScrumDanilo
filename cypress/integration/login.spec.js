@@ -1,21 +1,9 @@
 /// <reference types = "Cypress" />
-import loginPage from "../fixtures/login.json";
 import data from "../fixtures/data.json";
-import sidebar from "../fixtures/sidebar.json";
-import account from "../fixtures/account.json";
-import navigationWhenLoggedIn from "../fixtures/navigationWhenLoggedIn.json";
 import authModule from "../models/authModule";
 import errorMessages from "../fixtures/errorMessages.json";
 
-describe("first cypress block", () => {
-    // it("first test", () => {
-    //     expect(true).to.eq(true);
-    // });
-
-    // it("first test", () => {
-    //     expect(true).to.eq(false);
-    // });
-
+describe("login", () => {
     beforeEach("visit vivify scrum", () => {
         cy.visit("/", { timeout: 30000 });
     });

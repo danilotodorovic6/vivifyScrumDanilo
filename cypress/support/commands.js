@@ -45,3 +45,22 @@ Cypress.Commands.add("alertErrorMessage", (errorMessage) => {
     .should("be.visible")
     .and("contain", errorMessage);
 });
+Cypress.Commands.add("checkIfElementExists", (element) => {
+    cy.get("body").then(($body) => {
+        if ($body.find(element).length > 0) {
+            cy.get(element).should("exist");
+          //evaluates as true if button exists at all
+          cy.get(element).then(($header) => {
+            //you get here only if button EXISTS but is VISIBLE
+            if ($header.is(":visible")) {
+                cy.get(element).should("be.visible").click();
+            } else {
+              //you get here only if button EXISTS but is INVISIBLE
+              cy.get(element).should("not.be.visible");
+            };
+          });
+        } else {
+          //you get here only if button doesnt EXISTS
+        };
+    });
+});

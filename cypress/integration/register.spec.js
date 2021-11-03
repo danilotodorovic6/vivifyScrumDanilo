@@ -11,24 +11,8 @@ describe("register", () => {
         cy.visit("/");
         cy.url().should("contain", "cypress.vivifyscrum-stage.com");
         cy.get(loginPage.signUpLink).click();
-        cy.get("body").then(($body) => {
-            if ($body.find(navigationForDashboard.cookieGotIt).length > 0) {
-                cy.get(navigationForDashboard.cookieGotIt).should("exist");
-              //evaluates as true if button exists at all
-              cy.get(navigationForDashboard.cookieGotIt).then(($header) => {
-                //you get here only if button EXISTS but is VISIBLE
-                if ($header.is(":visible")) {
-                    cy.get(navigationForDashboard.cookieGotIt).should("be.visible");
-                } else {
-                  //you get here only if button EXISTS but is INVISIBLE
-                  cy.get(navigationForDashboard.cookieGotIt).should("not.be.visible");
-                }
-              });
-            } else {
-              //you get here only if button doesnt EXISTS
-            }
-          });
-          cy.get(navigationForDashboard.starterPack).click({force: true});
+        cy.checkIfElementExists(navigationForDashboard.cookieGotIt);
+        cy.get(navigationForDashboard.starterPack).click({force: true});
         cy.url().should("contain", "/sign-up");
     });
     it("without credentials", () => {
