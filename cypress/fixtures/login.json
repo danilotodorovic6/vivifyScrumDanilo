@@ -8,5 +8,6 @@
     "loginWithFacebookButton": ".vs-c-btn--fb",
     "loginWithTwiterButton": ".vs-c-btn--tw",
     "loginWithRegzenButton": ".vs-c-btn--regzen",
-    "signUpLink": "a[href='https://cypress-api.vivifyscrum-stage.com/pricing']"
+    "signUpLink": "a[href='https://cypress-api.vivifyscrum-stage.com/pricing']",
+    "oopsError": ".vs-c-custom-errors"
 }
