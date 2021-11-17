@@ -1,0 +1,223 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 7,
+    "passes": 6,
+    "pending": 0,
+    "failures": 1,
+    "start": "2021-11-16T15:09:41.738Z",
+    "end": "2021-11-16T15:09:59.952Z",
+    "duration": 18214,
+    "testsRegistered": 7,
+    "passPercent": 85.71428571428571,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "7eee2ac6-7047-4770-b6a0-1e7217abc05b",
+      "title": "",
+      "fullFile": "cypress/integration/board.spec.js",
+      "file": "cypress/integration/board.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "fa58a7b8-1138-4a03-ba6e-56fdb8153e24",
+          "title": "board",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "create board",
+              "fullTitle": "board create board",
+              "timedOut": null,
+              "duration": 8976,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_boardModule.default.createBoard();",
+              "err": {},
+              "uuid": "c181f374-3f83-4684-b084-7cad86de3b43",
+              "parentUUID": "fa58a7b8-1138-4a03-ba6e-56fdb8153e24",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "adding new column",
+              "fullTitle": "board adding new column",
+              "timedOut": null,
+              "duration": 1355,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_boardModule.default.addColumn();",
+              "err": {},
+              "uuid": "20acfc5d-3aae-4772-8774-76fb1b420e24",
+              "parentUUID": "fa58a7b8-1138-4a03-ba6e-56fdb8153e24",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "adding a story",
+              "fullTitle": "board adding a story",
+              "timedOut": null,
+              "duration": 958,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_boardModule.default.addStory();",
+              "err": {},
+              "uuid": "29d6dc08-0e67-47e2-8900-2e88474a2cd3",
+              "parentUUID": "fa58a7b8-1138-4a03-ba6e-56fdb8153e24",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "editing story",
+              "fullTitle": "board editing story",
+              "timedOut": null,
+              "duration": 2747,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "_boardModule.default.editStory();",
+              "err": {
+                "message": "AssertionError: expected null to equal 'This is description'",
+                "estack": "AssertionError: expected null to equal 'This is description'\n    at Context.eval (https://cypress.vivifyscrum-stage.com/__cypress/tests?p=cypress/integration/board.spec.js:386:54)",
+                "diff": null
+              },
+              "uuid": "2e347874-b27f-4a73-a46f-1c99182a2961",
+              "parentUUID": "fa58a7b8-1138-4a03-ba6e-56fdb8153e24",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "moving story to backlog",
+              "fullTitle": "board moving story to backlog",
+              "timedOut": null,
+              "duration": 560,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_boardModule.default.movingStoryToBacklog();",
+              "err": {},
+              "uuid": "5854007c-97bb-46ee-ad68-97a07532fa60",
+              "parentUUID": "fa58a7b8-1138-4a03-ba6e-56fdb8153e24",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "delete story",
+              "fullTitle": "board delete story",
+              "timedOut": null,
+              "duration": 812,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_boardModule.default.deleteStory();",
+              "err": {},
+              "uuid": "2ade45cf-72a9-4508-9626-3192c2c04161",
+              "parentUUID": "fa58a7b8-1138-4a03-ba6e-56fdb8153e24",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "delete board",
+              "fullTitle": "board delete board",
+              "timedOut": null,
+              "duration": 2636,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_boardModule.default.deleteBoard();",
+              "err": {},
+              "uuid": "c07162c6-c907-40e2-b3f7-4f79967bd5ca",
+              "parentUUID": "fa58a7b8-1138-4a03-ba6e-56fdb8153e24",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c181f374-3f83-4684-b084-7cad86de3b43",
+            "20acfc5d-3aae-4772-8774-76fb1b420e24",
+            "29d6dc08-0e67-47e2-8900-2e88474a2cd3",
+            "5854007c-97bb-46ee-ad68-97a07532fa60",
+            "2ade45cf-72a9-4508-9626-3192c2c04161",
+            "c07162c6-c907-40e2-b3f7-4f79967bd5ca"
+          ],
+          "failures": [
+            "2e347874-b27f-4a73-a46f-1c99182a2961"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 18044,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}

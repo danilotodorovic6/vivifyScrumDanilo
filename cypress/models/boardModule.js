@@ -13,7 +13,7 @@ module.exports = {
         return cy.get(".vs-c-col:nth-of-type(3) .vs-c-task-list button");
     },
     get createdTask(){
-        return cy.get(".vs-u-padding--sm");
+        return cy.get(".vs-c-task-card__body");
     },
     get taskTitle(){
         return cy.get(".vs-c-task__title .vue-simple-markdown");
@@ -76,7 +76,7 @@ module.exports = {
         //adding task description
         cy.intercept("PUT", `api/v2/tasks/${taskID}`).as("taskEdited");
         cy.getElementFunction("button", "name", "item_description_edit").click();
-        cy.getElementFunction("textarea", "name", "description").type(data.board.description);
+        cy.getElementFunction("textarea", "name", "description").click().type(data.board.description);
         cy.getElementFunction("button", "name", "item_description_save").click();
         cy.wait("@taskEdited").then((intercept) => {
             expect(intercept.response.body.name).to.eq(data.board.task + "2");

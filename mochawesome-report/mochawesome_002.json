@@ -1,0 +1,123 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-11-16T15:10:22.866Z",
+    "end": "2021-11-16T15:10:31.419Z",
+    "duration": 8553,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "db886ce7-51fc-4b6d-891f-ab330933dd94",
+      "title": "",
+      "fullFile": "cypress/integration/organization.spec.js",
+      "file": "cypress/integration/organization.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "7692ad99-7bea-443b-97b0-a0d2424778bc",
+          "title": "organization",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "create",
+              "fullTitle": "organization create",
+              "timedOut": null,
+              "duration": 6980,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_organizationModule.default.createOrganization();",
+              "err": {},
+              "uuid": "68f7ade7-05c3-4a90-87c8-d1416890596e",
+              "parentUUID": "7692ad99-7bea-443b-97b0-a0d2424778bc",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "delete",
+              "fullTitle": "organization delete",
+              "timedOut": null,
+              "duration": 1474,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_organizationModule.default.deleteOrganization();",
+              "err": {},
+              "uuid": "88438b69-8dd1-41c9-8c76-3c869e2ac74b",
+              "parentUUID": "7692ad99-7bea-443b-97b0-a0d2424778bc",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "68f7ade7-05c3-4a90-87c8-d1416890596e",
+            "88438b69-8dd1-41c9-8c76-3c869e2ac74b"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 8454,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}

@@ -1,0 +1,218 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 7,
+    "passes": 7,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-11-16T15:10:01.604Z",
+    "end": "2021-11-16T15:10:21.337Z",
+    "duration": 19733,
+    "testsRegistered": 7,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "727eebb5-ac71-4784-ba0f-08069cfc95e7",
+      "title": "",
+      "fullFile": "cypress/integration/login.spec.js",
+      "file": "cypress/integration/login.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "1d5fe73c-5026-47eb-9c92-33bd09725c68",
+          "title": "login",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "without credentials",
+              "fullTitle": "login without credentials",
+              "timedOut": null,
+              "duration": 2523,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_authModule.default.login({\n  email: \"\",\n  password: \"\"\n});\ncy.errorMessageFunction(\"Email Address\", _errorMessages.default.invalidEmail);\ncy.errorMessageFunction(\"Password\", _errorMessages.default.requiredPassword);\ncy.url().should(\"contain\", \"/login\");",
+              "err": {},
+              "uuid": "c1d7dbe1-5f9f-4e59-8498-252a6a67f22f",
+              "parentUUID": "1d5fe73c-5026-47eb-9c92-33bd09725c68",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "without password",
+              "fullTitle": "login without password",
+              "timedOut": null,
+              "duration": 1940,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_authModule.default.login({\n  password: \"\"\n});\ncy.errorMessageFunction(\"Password\", _errorMessages.default.requiredPassword);\ncy.url().should(\"contain\", \"/login\");",
+              "err": {},
+              "uuid": "c0441aa0-6e0b-4854-a0c7-20e1307bc1e9",
+              "parentUUID": "1d5fe73c-5026-47eb-9c92-33bd09725c68",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "without email",
+              "fullTitle": "login without email",
+              "timedOut": null,
+              "duration": 1475,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_authModule.default.login({\n  email: \"\"\n});\ncy.errorMessageFunction(\"Email Address\", _errorMessages.default.invalidEmail);\ncy.url().should(\"contain\", \"/login\");",
+              "err": {},
+              "uuid": "446b7f08-0b25-444b-a0b8-a4fcea6b2d61",
+              "parentUUID": "1d5fe73c-5026-47eb-9c92-33bd09725c68",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "with invalid email",
+              "fullTitle": "login with invalid email",
+              "timedOut": null,
+              "duration": 2039,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_authModule.default.login({\n  email: _data.default.invalidUser.email\n});\n_authModule.default.errorMessage.should(\"have.length\", 3);\ncy.errorMessageWithoutLabel(_errorMessages.default.passOrEmailInvalid);\ncy.url().should(\"contain\", \"/login\");",
+              "err": {},
+              "uuid": "2852d8a9-4e19-43b4-a54a-d5baa6bf5de6",
+              "parentUUID": "1d5fe73c-5026-47eb-9c92-33bd09725c68",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "with invalid password",
+              "fullTitle": "login with invalid password",
+              "timedOut": null,
+              "duration": 2433,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_authModule.default.login({\n  password: _data.default.invalidUser.password\n});\n_authModule.default.errorMessage.should(\"have.length\", 3);\ncy.errorMessageWithoutLabel(_errorMessages.default.passOrEmailInvalid);\ncy.url().should(\"contain\", \"/login\");",
+              "err": {},
+              "uuid": "1baadcc0-f6a0-47ca-aba1-823d749d4444",
+              "parentUUID": "1d5fe73c-5026-47eb-9c92-33bd09725c68",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "login with pom",
+              "fullTitle": "login login with pom",
+              "timedOut": null,
+              "duration": 3762,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_authModule.default.login({});\ncy.url().should(\"not.contain\", \"/login\");",
+              "err": {},
+              "uuid": "ffecb7f7-2b35-4f8c-9f91-315dba13ff37",
+              "parentUUID": "1d5fe73c-5026-47eb-9c92-33bd09725c68",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "logout",
+              "fullTitle": "login logout",
+              "timedOut": null,
+              "duration": 5333,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "_authModule.default.login({});\n_authModule.default.logout();\ncy.url().should(\"contain\", \"/login\");",
+              "err": {},
+              "uuid": "967b6b06-2de9-4a5c-8858-91e713c4ad4e",
+              "parentUUID": "1d5fe73c-5026-47eb-9c92-33bd09725c68",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c1d7dbe1-5f9f-4e59-8498-252a6a67f22f",
+            "c0441aa0-6e0b-4854-a0c7-20e1307bc1e9",
+            "446b7f08-0b25-444b-a0b8-a4fcea6b2d61",
+            "2852d8a9-4e19-43b4-a54a-d5baa6bf5de6",
+            "1baadcc0-f6a0-47ca-aba1-823d749d4444",
+            "ffecb7f7-2b35-4f8c-9f91-315dba13ff37",
+            "967b6b06-2de9-4a5c-8858-91e713c4ad4e"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 19505,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.0.1"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "6.0.1"
+    }
+  }
+}
