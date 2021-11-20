@@ -7,9 +7,19 @@
     "cypress": "^8.5.0",
     "faker": "^5.5.3"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "axios": "^0.24.0",
+    "cypress-file-upload": "^5.0.8",
+    "fs-extra": "^10.0.0",
+    "mochawesome": "^7.0.1",
+    "mochawesome-merge": "^4.2.0",
+    "mochawesome-report-generator": "^6.0.1"
+  },
   "scripts": {
-    "cypress": "./node_modules/.bin/cypress open"
+    "cypress": "./node_modules/.bin/cypress open",
+    "stage": "cypress open --env fileConfig=stage",
+    "qa": "cypress open --env fileConfig=qa",
+    "report": "node scripts/test.js"
   },
   "repository": {
     "type": "git",
