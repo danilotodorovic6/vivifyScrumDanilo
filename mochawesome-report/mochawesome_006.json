@@ -5,9 +5,9 @@
     "passes": 2,
     "pending": 0,
     "failures": 0,
-    "start": "2021-11-18T15:20:18.749Z",
-    "end": "2021-11-18T15:20:28.038Z",
-    "duration": 9289,
+    "start": "2021-11-18T15:25:52.912Z",
+    "end": "2021-11-18T15:26:04.838Z",
+    "duration": 11926,
     "testsRegistered": 2,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "dd840415-76a0-4768-aeec-5b37563ead86",
+      "uuid": "6b667fe5-0e02-4ff7-85aa-8b4d27995874",
       "title": "",
       "fullFile": "cypress/integration/organization.spec.js",
       "file": "cypress/integration/organization.spec.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "78c0e1a1-8cf6-4e1a-ace0-69c191b80e73",
+          "uuid": "4b266061-bf01-4671-85d2-5340c8c08fb3",
           "title": "organization",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "create",
               "fullTitle": "organization create",
               "timedOut": null,
-              "duration": 7443,
+              "duration": 10262,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,8 +47,8 @@
               "context": null,
               "code": "_organizationModule.default.createOrganization();",
               "err": {},
-              "uuid": "f613b49e-9a97-4adb-b664-22c6bcbd209f",
-              "parentUUID": "78c0e1a1-8cf6-4e1a-ace0-69c191b80e73",
+              "uuid": "b5239b09-3c03-4ac1-b284-2bdafbb5c9e1",
+              "parentUUID": "4b266061-bf01-4671-85d2-5340c8c08fb3",
               "isHook": false,
               "skipped": false
             },
@@ -56,7 +56,7 @@
               "title": "delete",
               "fullTitle": "organization delete",
               "timedOut": null,
-              "duration": 1797,
+              "duration": 1593,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -65,21 +65,21 @@
               "context": null,
               "code": "_organizationModule.default.deleteOrganization();",
               "err": {},
-              "uuid": "35898c58-d971-4a5c-bfa7-16fa7d633b0c",
-              "parentUUID": "78c0e1a1-8cf6-4e1a-ace0-69c191b80e73",
+              "uuid": "6038e787-1a46-46e2-b5df-ffe7f2767cc8",
+              "parentUUID": "4b266061-bf01-4671-85d2-5340c8c08fb3",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "f613b49e-9a97-4adb-b664-22c6bcbd209f",
-            "35898c58-d971-4a5c-bfa7-16fa7d633b0c"
+            "b5239b09-3c03-4ac1-b284-2bdafbb5c9e1",
+            "6038e787-1a46-46e2-b5df-ffe7f2767cc8"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 9240,
+          "duration": 11855,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
