@@ -1,12 +1,13 @@
 import color from "../support/consoleColor";
+import data from "../fixtures/data.json";
 
 module.exports = {
-    login({ email = "danilo.todorovic@vivify.ideas.com", password = "pass1234", statusCode = 200, testMessage = "" }) {
+    login({ email = data.user.email, password = data.user.password, statusCode = 200, testMessage = "" }) {
         return cy
             .request({
                 failOnStatusCode: false,
                 method: "POST",
-                url: "https://cypress-api.vivifyscrum-stage.com/api/v2/login",
+                url: `${Cypress.config('apiUrl')}/login`,
                 body: {
                     email: email,
                     password: password,

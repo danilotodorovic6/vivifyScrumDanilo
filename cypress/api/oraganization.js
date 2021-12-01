@@ -1,12 +1,13 @@
 import faker from "faker";
 import color from "../support/consoleColor";
+import data from "../fixtures/data.json";
 
 module.exports = {
     get({ token = "" }) {
         return cy
             .request({
                 method: "GET",
-                url: "https://cypress-api.vivifyscrum-stage.com/api/v2/organizations-data",
+                url: `${Cypress.config('apiUrl')}/organizations-data`,
                 headers: {
                     Authorization: `Bearer ${token}`,
                 },
@@ -20,7 +21,7 @@ module.exports = {
         return cy
             .request({
                 method: "POST",
-                url: "https://cypress-api.vivifyscrum-stage.com/api/v2/organizations",
+                url: `${Cypress.config('apiUrl')}/organizations`,
                 body: {
                     name: orgName,
                 },
@@ -40,12 +41,12 @@ module.exports = {
                 return response.body;
             });
     },
-    delete({ orgId = "", token = "", statusCode = 201, testMessage = "", password = "pass1234" }) {
+    delete({ orgId = "", token = "", statusCode = 201, testMessage = "", password = data.user.password }) {
         return cy
             .request({
                 failOnStatusCode: false,
                 method: "POST",
-                url: `https://cypress-api.vivifyscrum-stage.com/api/v2/organizations/${orgId}`,
+                url: `${Cypress.config('apiUrl')}/organizations/${orgId}`,
                 body: {
                     passwordOrEmail: password,
                 },

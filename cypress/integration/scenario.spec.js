@@ -25,7 +25,8 @@ describe("Api testing", () => {
     it("03 - Delete organization", () => {
         organizationApi.delete({
             token: userToken,
-            orgId: organizationId
+            orgId: organizationId,
+            testMessage: "03 - Delete organization"
         });
     });
 
@@ -33,11 +34,11 @@ describe("Api testing", () => {
     it("04 - Get all organizations", () => {
         organizationApi
             .get({
-                token: userToken
+                token: userToken,
+                testMessage: "04 - Get all organizations"
             })
             .then((allOrgs) => {
                 allOrganizations = allOrgs;
-                console.log(allOrganizations);
             });
     });
 

@@ -1,4 +1,5 @@
 import userApi from "../api/user";
+import data from "../fixtures/data.json";
 
 describe("Api testing", () => {
     let userToken;
@@ -9,29 +10,29 @@ describe("Api testing", () => {
     });
     it("wrong email without @", () => {
         userApi.login({
-            email: "hemloemail.com",
+            email: data.registerInvalidUser["emailWithout@"],
             testMessage: "02 - Wrong email without @",
             statusCode: 401,
         });
     });
     it("wrong email without .com", () => {
         userApi.login({
-            email: "hemlo@email",
+            email: data.registerInvalidUser["emailWithout."],
             testMessage: "03 - Wrong email without .com",
             statusCode: 401,
         });
     });
     it("Wrong email with space infornt", () => {
         userApi.login({
-            email: "@gmail.com",
+            email: data.registerInvalidUser.emailWithSpaceInfront,
             testMessage: "04 - Wrong email with space infornt",
             statusCode: 401,
         });
     });
     it("Wrong password", () => {
         userApi.login({
-            password: "hemlo",
-            testMessage: "04 - Wrong password",
+            password: data.invalidUser.password,
+            testMessage: "05 - Wrong password",
             statusCode: 401,
         });
     });

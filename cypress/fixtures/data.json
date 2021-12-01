@@ -15,6 +15,7 @@
     "registerInvalidUser": {
         "emailWithout@": "invalidmail.com",
         "emailWithout.": "invalid@mail",
+        "emailWithSpaceInfront": "@gmail.com",
         "passwordLessThan5Chars": "pass",
         "numOfUsersLessThan1": "0",
         "numOfUsersMoreThan10": 11,
@@ -28,6 +29,8 @@
         "column": "QA column",
         "task": "New story",
         "description": "This is description",
-        "comment": "This is a comment"
+        "comment": "This is a comment",
+        "type": "scrum_board",
+        "taskUnit": "points"
     }
 }

@@ -48,7 +48,7 @@ describe("Api testing boards", () => {
                 boardID: boardsIDs[i]
             })
         }
-        boardApi.get({token: userToken})
+        boardApi.get({token: userToken, testMessage: "06 - Check if boards are deleted"})
         .then((allBoards) => {
             expect(allBoards).to.have.length(0);
         });
